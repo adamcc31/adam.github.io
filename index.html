@@ -370,6 +370,37 @@
      <script src="js/smoothscroll.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/custom.js"></script>
+     
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable View Source Example</title>
+    <style>
+        body {
+            user-select: none; /* Prevent text selection */
+        }
+    </style>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
+        // Disable specific keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+                e.key === 'F12' || // F12
+                (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
+                (e.ctrlKey && e.shiftKey && e.key === 'J') // Ctrl+Shift+J
+            ) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Try to view the source code huh!?</h1>
+    <p>You can try, but it's a bit more difficult.</p>
+</body>
 </body>
 </html>
